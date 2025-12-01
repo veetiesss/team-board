@@ -90,6 +90,9 @@ button{
     gap: 10vw;
     font-size: 2vw;
 }
+.createsurveyall{
+    font-family: montserrat
+}
 .results{
     font-size: 2vw;
     padding: 0;
@@ -127,7 +130,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 31vw;
+    width: 33vw;
     background-color:rgb(255, 156, 57);
     justify-content: center;
     align-items: center;
@@ -263,3 +266,4 @@ form{
     font-weight: bold;
     color: red;
 }
+
