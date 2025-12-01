@@ -1,0 +1,265 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    transition: 1s ease;
+    align-items: center;
+}
+.lightwrapper{
+    color: black;
+    transition: 1s ease;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 16vw;
+    height: 100px;
+}
+.navenglish{
+    gap: 20vw;
+}
+.pagename{
+    color: white;
+    text-decoration: none;
+    font-size: 3vw;
+    font-family: pirata one;
+    transition: 1s ease;
+}
+.lightpagename{
+    color: black;
+    transition: 1s ease;
+}
+.pagename:hover{
+    transition: 0.5s ease;
+    color: rgb(255, 183, 111);
+}
+body{
+    background-color: rgb(0, 0, 0);
+    transition: 1s ease;
+}
+.lightbody{
+    background-color: white;
+    transition: 1s ease;
+}
+.allnews{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+.newimg{
+    width: 25vw;
+}
+.new{
+    width: 30vw;
+    font-size: 1vw;
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.newtime, .newcontent, .fulltext{
+    font-weight: 300;
+}
+.hidden{
+    display: none !important; 
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+}
+button{
+    margin-top: 1vw;
+    font-size: 2vw;
+    width: 20vw;
+    height: 4vw;
+    background-color: rgb(255, 183, 111);
+    color: white;
+    font-family: science gothic;
+    border: none;
+    border-radius: 3vw;
+}
+.allsurveys{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: montserrat;
+    gap: 10vw;
+    font-size: 2vw;
+}
+.results{
+    font-size: 2vw;
+    padding: 0;
+}
+header{
+    width: 100%;
+    height: 30vw;
+    background-image: url(peach.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sitename{
+    font-size: 10vw;
+    font-family: science gothic;
+}
+.newstitle, .surveys{
+    font-family: Pirata one;
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.surveyslist{
+    font-family: montserrat;
+    margin-bottom: 2vw;
+}
+.surveystitle, .surveytitle, .newstitle, .newtitle{
+    color: rgb(255, 183, 111);
+}
+.createnewall, .createsurveyall{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 31vw;
+    background-color:rgb(255, 156, 57);
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+}
+.createnew, .createsurvey{
+    width: 20vw;
+    height: 5vw;
+    font-size: 1.5vw;
+}
+.createnewbutton, .createsurveybutton{
+    height: 5vw;
+    font-size: 1.5vw;
+}
+.changetheme{
+    background-image: url(theme.png); 
+    background-size: cover;
+    width: 5vw;
+    height: 5vw;
+}
+.changetheme:hover{
+    transition: 0.5s ease;
+    background-color:rgb(255, 156, 57);
+}
+.settings{
+    display: flex;
+    flex-direction: row;
+}
+.changelanguage{
+    width: 5vw;
+    height: 5vw;
+    font-size: 2vw;
+    background-color: transparent
+}
+.changelanguage:hover{
+    color:rgb(255, 183, 111);
+    transition: 0.5s ease;
+}
+.lightchangelanguage{
+    color: black;
+    transition: 0.5s ease;
+}
+.createnewwindow input, .createsurveywindow input{
+    width: 15vw;
+    border: none;
+}
+#createnewtitle{
+    height: 3vw;
+}
+#createnewcontent{
+    height: 10vw;
+}
+.createnewwindow, .createsurveywindow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31vw;
+    text-align: center;
+}
+.graphic{
+    display: flex;
+    justify-content:  center;
+    align-items: flex-end;
+    width: 75vw;
+    font-size: 3vw;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    gap: 5vw;
+}
+.graphic1{
+
+    height: 20vw;
+    background-color: blue;
+    margin-top: 5vw;
+}
+.graphic2{
+
+    height: 20vw;
+    background-color: rgb(255, 0, 0);
+    margin-top: 5vw;
+}
+.graphic3{
+
+    height: 20vw;
+    background-color: rgb(77, 255, 0);
+    margin-top: 5vw;
+}
+.graphic4{
+
+    height: 20vw;
+    background-color: rgb(255, 234, 0);
+    margin-top: 5vw;
+}
+.graphic5{
+
+    height: 20vw;
+    background-color: rgb(166, 0, 255);
+    margin-top: 5vw;
+}
+.graphicpagelink{
+    color: white;
+    text-decoration: none;
+}
+.graphicpages{
+    display: flex;
+    gap: 5.5vw;
+    margin-bottom: 5vw
+}
+.surveyslist{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+form{
+    width: 25vw;
+}
+.answersvotes{
+    display: flex;
+    flex-direction: row;
+}
+.answers, .votes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.answers{
+    margin-right: 1vw;
+}
+.results{
+    list-style-type: none;
+}
+.votes{
+    font-weight: bold;
+    color: red;
+}

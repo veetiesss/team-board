@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pirata+One&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="page"><a class="pagename dashboardpage" href="index.html">Dashboard</a></div>
+            <div class="page"><a class="pagename newspage" href="index1.html">Ankündigungen</a></div>
+            <div class="page"><a class="pagename surveyspage" href="index2.html">Umfragen</a></div>
+            <div class="settings">
+                <button class="changetheme"></button>
+                <button class="changelanguage">EN</button>
+            </div>
+        </nav>
+        <header>
+            <h1 class="sitename">TEAM-BOARD</h1>
+        </header>
+        <div class="surveys">
+            <h2 class="surveystitle"></h2>
+            <div class="allsurveys">
+                <div class="survey">
+                    <h2 class="surveytitle surveytitle1">Über Sie</h2>
+                    <form class="survey1">
+                        <h2 class="surveyquestion1">Ihr Geschlecht:</h2>
+                        <div class="answersvotes">
+                           <div class="answers">
+                            <label class="male"><input type="radio" name="gender" value="male" >männlich</label>
+                            <label class="female"><input type="radio" name="gender" value="female">weiblich</label>
+                           </div> 
+                           <div class="votes">
+                            <ul id="results1" class="results"></ul>
+                           </div>
+                        </div>
+                        <h2>Ihr Alter:</h2>
+                        <input type="number">
+                        <button class="button1" type="submit">Abstimmen</button>
+                    </form>
+                    <button class="graphicpage"><a class="graphicpagelink" href="index3.html">Balkengrafik</a></button>
+                </div>
+
+                <div class="survey">
+                    <h2 class="surveytitle surveytitle2">Bildschirmzeit</h2>
+                    <form class="survey2">
+                        <h2 class="surveyquestion2">Wie viel Zeit verbringst du in Gadgets?</h2>
+                        <div class="answersvotes">
+                            <div class="answers">
+                        <label class="onetwohour"><input type="radio" name="screentime" value="onetwohour">1-2 Stunden</label>
+                        <label class="threefivehour"><input type="radio" name="screentime" value="threefivehour">3-5 Stunden</label>
+                        <label class="sixeighthour"><input type="radio" name="screentime" value="sixeighthour">6-8 Stunden</label>
+                            </div>
+                            <div class="votes">
+                                <ul id="results2" class="results"></ul>
+                            </div>
+                        </div>
+                        <button class="button2" type="submit">Abstimmen</button>
+                    </form>
+                    <button class="graphicpage"><a class="graphicpagelink" href="index4.html">Balkengrafik</a></button>
+                </div>
+
+                <div class="survey">
+                    <h2 class="surveytitle surveytitle3">Umwelt- und <br>Klimaschutz</h2>
+                    <form class="survey3">
+                        <h2 class="surveyquestion3">Wie wichtig ist dir Umwelt- und Klimaschutz?</h2>
+                        <div class="answersvotes">
+                            <div class="answers">
+                                <label class="veryimportant"><input type="radio" name="eko" value="veryimportant">Sehr wichtig</label>
+                        <label class="important"><input type="radio" name="eko" value="important">Wichtig</label>
+                        <label class="neutral1"><input type="radio" name="eko" value="neutral">Neutral</label>
+                        <label class="lessimportant"><input type="radio" name="eko" value="lessimportant">Weniger wichtig</label>
+                        <label class="notimportant"><input type="radio" name="eko" value="notimportant">Nicht wichtig</label>
+                            </div>
+                            <div class="votes">
+                                <ul id="results3" class="results"></ul>
+                            </div>
+                        </div>
+                        <button class="button3" type="submit">Abstimmen</button>
+                    </form>
+                    <button class="graphicpage"><a class="graphicpagelink" href="index5.html">Balkengrafik</a></button>
+                </div>
+
+                <div class="survey">
+                    <h2 class="surveytitle surveytitle4">Social Media</h2>
+                    <form class="survey4">
+                        <h2 class="surveyquestion4">Stimmst du der Aussage zu: "Social Media beeinflusst unseren Alltag stark"?</h2>
+                        <div class="answersvotes">
+                            <div class="answers">
+                                <label class="totallyagree"><input type="radio" name="media" value="totallyagree">Stimme voll zu</label>
+                        <label class="agree"><input type="radio" name="media" value="agree">Stimme zu</label>
+                        <label class="neutral2"><input type="radio" name="media" value="neutral">Neutral</label>
+                        <label class="disagree"><input type="radio" name="media" value="disagree">Stimme nicht zu</label>
+                        <label class="totallydisagree"><input type="radio" name="media" value="totallydisagree">Stimme üb. nicht zu </label>
+                            </div>
+                            <div class="votes">
+                                <ul id="results4" class="results"></ul>
+                            </div>
+                        </div>
+                        <button class="button4" type="submit">Abstimmen</button>
+                    </form>
+                    <button class="graphicpage"><a class="graphicpagelink" href="index6.html">Balkengrafik</a></button>
+                </div>
+
+                <div class="survey">
+                    <h2 class="surveytitle surveytitle5">Schule/Arbeit</h2>
+                    <form class="survey5">
+                        <h2 class="surveyquestion5">Meinst du, dass Schule/Arbeit genug auf praktische Fähigkeiten vorbereitet?</h2>
+                        <div class="answersvotes">
+                            <div class="answers">
+                                <label class="absolutelyyes"><input type="radio" name="practice" value="absolutelyyes">Ja, absolut</label>
+                        <label class="mostlyyes"><input type="radio" name="practice" value="mostlyyes">Meistens ja</label>
+                        <label class="neutral3"><input type="radio" name="practice" value="neutral">Neutral</label>
+                        <label class="mostlyno"><input type="radio" name="practice" value="mostlyno">Meistens nein</label>
+                        <label class="absolutelyno"><input type="radio" name="practice" value="absolutelyno">Überhaupt nicht</label>
+                            </div>
+                            <div class="votes">
+                                <ul id="results5" class="results"></ul>
+                            </div>
+                        </div>
+                        <button class="button5" type="submit">Abstimmen</button>
+                    </form>
+                    <button class="graphicpage"><a class="graphicpagelink" href="index7.html">Balkengrafik</a></button>
+                </div>
+
+                <div class="survey">
+                    <h2 class="surveytitle surveytitle6">Freizeitaktivität</h2>
+                    <form class="survey6">
+                        <h2 class="surveyquestion6">Welche Freizeitaktivität bevorzugst du?</h2>
+                        <div class="answersvotes">
+                            <div class="answers">
+                                <label class="sport"><input type="radio" name="freetime" value="sport">Sport treiben</label>
+                        <label class="reading"><input type="radio" name="freetime" value="reading">Lesen</label>
+                        <label class="videogames"><input type="radio" name="freetime" value="videogames">Videospiele</label>
+                        <label class="films"><input type="radio" name="freetime" value="films">Filme anschauen</label>
+                        <label class="friends"><input type="radio" name="freetime" value="friends">Freunde treffen</label>
+                            </div>
+                            <div class="votes">
+                                <ul id="results6" class="results">Ergebnisse:</ul>
+                            </div>
+                        </div>
+                        <button class="button6" type="submit">Abstimmen</button>
+                    </form>
+                    <button class="graphicpage"><a class="graphicpagelink" href="index8.html">Balkengrafik</a></button>
+                </div>
+                <div class="graphicpages">
+                    
+                    
+                    
+                    
+                    
+                </div>
+                
+
+
+            </div>
+            <div class="createsurveyall">
+            <button class="createsurvey">Neue Umfrage erstellen</button>
+                <form class="createsurveywindow hidden">
+                    <h2>Titel:</h2> <br>
+                    <input id="createsurveytitle" type="text" required> <br>
+                    <h2>Frage:</h2>
+                    <input id="createsurveyquestion" type="text" required> <br>
+                    <h2>Antwortmöglichkeit:</h2><br>
+                    <input id="option1" class="createsurveyoption" type="text" required> <br>
+                    <input id="option2" class="createsurveyoption" type="text" required> <br>
+                    <input id="option3" class="createsurveyoption" type="text"> <br>
+                    <input id="option4" class="createsurveyoption" type="text"> <br>
+                    <input id="option5" class="createsurveyoption" type="text"> <br>
+                    <button class="createsurveybutton" type="submit">Erstellen</button>
+                </form>
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+</html>
