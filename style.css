@@ -266,4 +266,59 @@ form{
     font-weight: bold;
     color: red;
 }
-
+@media only screen and (max-width: 755px) {
+    .new{
+    width: 45vw;
+    font-size: 2vw;
+}
+}
+@media only screen and (max-width: 565px) {
+    .new{
+    width: 80vw;
+    font-size: 3vw;
+}
+    .allnews{
+        justify-content: center;
+        
+    }
+  
+    
+}
+@media only screen and (max-width: 850px){
+    .nav{
+        gap: 3vw;
+    }
+    .pagename{
+        font-size: 5vw;
+    }
+    .changelanguage{
+        font-size: 3vw;
+    }
+}
+@media only screen and (max-width: 300px){
+    .changelanguage{
+        font-size: 5vw;
+    }
+    .changetheme{
+        width: 8vw;
+        height: 8vw;
+    }
+    .new{
+    width: 80vw;
+    font-size: 4vw;
+}
+}
+@media only screen and (max-width: 769px){
+    .survey, .results, .surveytitle{
+        font-size: 3vw;
+    }
+}
+@media only screen and (max-width: 462px){
+    form{
+        font-size: 5vw;
+        width: 80vw;
+    }
+     .results, .surveytitle{
+        font-size: 5vw;
+     }
+}
