@@ -1,3 +1,11 @@
+// =================================================================
+// 🚀 НАСТРОЙКИ API (ЗАМЕНИТЬ, ЕСЛИ СЕРВЕР ЗАПУЩЕН НА ДРУГОМ АДРЕСЕ)
+// =================================================================
+const API_URL = 'http://localhost:3000/api/announcements'; 
+
+// =================================================================
+// 🎨 ЛОГИКА ТЕМЫ И ЯЗЫКА (ВАШ СУЩЕСТВУЮЩИЙ КОД)
+// =================================================================
 const changetheme = document.querySelector(".changetheme")
 const wrapper = document.querySelector(".wrapper")
 const pagename = document.querySelectorAll(".pagename")
@@ -10,32 +18,68 @@ changetheme.addEventListener("click", function(){
     changelanguage.classList.toggle("lightchangelanguage")
 })
 
+
+// =================================================================
+// 📢 ЛОГИКА ОБЪЯВЛЕНИЙ (ПЕРЕПИСАНА ДЛЯ РАБОТЫ С API)
+// =================================================================
+
 const form = document.querySelector(".createnewwindow")
 const createnewtitle = document.querySelector("#createnewtitle") 
 const createnewcontent = document.querySelector("#createnewcontent")
 const allnews = document.querySelector(".allnews")
+const createnewbutton = document.querySelector(".createnew") // Кнопка для открытия формы
 
-let savednews = JSON.parse(localStorage.getItem("news")) || []
+// Массив для хранения объявлений в памяти на время сессии
+let savednews = [] 
 
-function renderNews() {
-    savednews.forEach(item => {
+// --- Функция рендеринга объявлений ---
+function renderNews(newsItems) {
+    allnews.innerHTML = ''; // Очищаем контейнер перед рендерингом
+    
+    if (newsItems.length === 0) {
+        allnews.innerHTML = '<p>Пока нет объявлений.</p>';
+        return;
+    }
+
+    newsItems.forEach(item => {
+        // Используем структуру из вашего HTML
         allnews.innerHTML += `<div class="newinfo">
         <h2 class="newtitle">${item.title}</h2>
-        <h2 class="newtime">${item.date}</h2>
+        <h2 class="newtime">${item.date}</h2> 
         <h2 class="newcontent">${item.content}</h2>
         </div>`
     })
 }
 
-renderNews()
+// --- Загрузка данных с сервера (GET) ---
+async function fetchAndRenderNews() {
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+        // Получаем массив объявлений с сервера
+        savednews = await response.json(); 
+        renderNews(savednews); // Отображаем их
+    } catch (error) {
+        console.error('Ошибка загрузки объявлений с сервера:', error);
+        allnews.innerHTML = '<p>Не удалось загрузить объявления с сервера. Проверьте запущен ли ваш Node.js сервер!</p>';
+    }
+}
 
-form.addEventListener("submit", function(event){
+// Запускаем загрузку данных сразу при загрузке страницы
+fetchAndRenderNews();
+
+// --- Отправка нового объявления на сервер (POST) ---
+form.addEventListener("submit", async function(event){
     event.preventDefault()
+    
+    // --- Ваша существующая логика получения даты ---
     const today = new Date()
     const day = today.getDate()
     const month = today.getMonth() + 1
 
-    let monthname = 1
+    let monthname = ""
     if(month === 1){
         monthname = "Januar"
     }
@@ -72,20 +116,52 @@ form.addEventListener("submit", function(event){
     if(month === 12){
         monthname = "Dezember"
     }
+    // --- Конец вашей логики получения даты ---
 
     const newitem = {
         title: createnewtitle.value,
-        date: `${day}. ${monthname}`,
-        content: createnewcontent.value
+        content: createnewcontent.value,
+        date: `${day}.${monthname}.`
     }
 
-    savednews.push(newitem)
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newitem),
+        });
 
-    localStorage.setItem("news", JSON.stringify(savednews))
+        if (!response.ok) {
+            // Если сервер вернул код ошибки (4xx или 5xx)
+            throw new Error(`Ошибка HTTP при сохранении: ${response.status} ${response.statusText}`);
+        }
+        
+        // Получаем данные, которые сохранил сервер (с ID и датой создания)
+        const data = await response.json(); 
+        
+        console.log('Объявление успешно сохранено:', data);
+        
+        // Обновляем список, загружая его заново с сервера
+        await fetchAndRenderNews(); 
+        
+        // Скрываем форму и очищаем поля
+        form.classList.add("hidden")
+        createnewbutton.classList.remove("hidden")
+        form.reset();
+        
+    } catch (error) {
+        console.error('Ошибка создания объявления:', error);
+        alert('Не удалось создать объявление. Проверьте соединение с сервером.');
+    }
+})
 
-    renderNews()
 
-    form.reset()
+// --- Логика открытия/закрытия формы (Ваш существующий код) ---
+createnewbutton.addEventListener("click", function(){
+    form.classList.toggle("hidden")
+    createnewbutton.classList.toggle("hidden")
 })
 
 const createnew = document.querySelector(".createnew")
